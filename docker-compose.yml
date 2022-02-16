@@ -10,7 +10,7 @@ networks:
 
 services:
   ca.centAuth.ehr.com:
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:1.5
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.centAuth.ehr.com
@@ -26,7 +26,7 @@ services:
       - basic
 
   ca.radioLogist.ehr.com:
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:1.5
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.radioLogist.ehr.com
@@ -42,7 +42,7 @@ services:
       - basic
 
   ca.clinician.ehr.com:
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:1.5
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.clinician.ehr.com
@@ -59,7 +59,7 @@ services:
 
 
   ca.pharmacist.ehr.com:
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:1.5
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.pharmacist.ehr.com
@@ -76,7 +76,7 @@ services:
 
 
   ca.researcher.ehr.com:
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:1.5
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.researcher.ehr.com
@@ -92,7 +92,7 @@ services:
       - basic
 
   ca.healthCareProvider.ehr.com:
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:1.5
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.healthCareProvider.ehr.com
@@ -109,7 +109,7 @@ services:
 
   orderer.ehr.com:
     container_name: orderer.ehr.com
-    image: hyperledger/fabric-orderer
+    image: hyperledger/fabric-orderer:2.4
     environment:
       - FABRIC_LOGGING_SPEC=info
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -135,7 +135,7 @@ services:
 
   peer0.centAuth.ehr.com:
     container_name: peer0.centAuth.ehr.com
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:2.4
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_PEER_ID=peer0.centAuth.ehr.com
@@ -187,7 +187,7 @@ services:
 
   peer0.clinician.ehr.com:
     container_name: peer0.clinician.ehr.com
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:2.4
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_PEER_ID=peer0.clinician.ehr.com
@@ -240,7 +240,7 @@ services:
 
   peer0.radioLogist.ehr.com:
     container_name: peer0.radioLogist.ehr.com
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:2.4
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_PEER_ID=peer0.radioLogist.ehr.com
@@ -292,7 +292,7 @@ services:
 
   peer0.pharmacist.ehr.com:
     container_name: peer0.pharmacist.ehr.com
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:2.4
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_PEER_ID=peer0.pharmacist.ehr.com
@@ -344,7 +344,7 @@ services:
 
   peer0.researcher.ehr.com:
     container_name: peer0.researcher.ehr.com
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:2.4
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_PEER_ID=peer0.researcher.ehr.com
@@ -396,7 +396,7 @@ services:
 
   peer0.healthCareProvider.ehr.com:
     container_name: peer0.healthCareProvider.ehr.com
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:2.4
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
       - CORE_PEER_ID=peer0.healthCareProvider.ehr.com
@@ -449,7 +449,7 @@ services:
   
   cli:
     container_name: cli
-    image: hyperledger/fabric-tools
+    image: hyperledger/fabric-tools:2.4
     tty: true
     environment:
       - GOPATH=/opt/gopath

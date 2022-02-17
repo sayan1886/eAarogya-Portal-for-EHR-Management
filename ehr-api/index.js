@@ -12,7 +12,8 @@ const i18n = require("i18n");
 const upload = require('express-fileupload');
 const cors = require('cors');
 const uri =
-  "mongodb+srv://test:test@cluster0-2czvc.mongodb.net/ehr?retryWrites=true&w=majority";
+  // "mongodb+srv://test:test@cluster0-2czvc.mongodb.net/ehr?retryWrites=true&w=majority";
+  "mongodb+srv://ehrdbuser:NGjfZrDEVtS7xGQG@cluster0.kgpza.azure.mongodb.net/ehr?retryWrites=true&w=majority";
 
 mongoose.connect(uri, {
   useNewUrlParser: true,

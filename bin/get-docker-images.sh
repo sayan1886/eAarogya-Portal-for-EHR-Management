@@ -8,7 +8,7 @@
 # set the default Docker namespace and tag
 DOCKER_NS=hyperledger
 ARCH=x86_64
-VERSION=1.1.0
+VERSION=2.4
 BASE_DOCKER_TAG=x86_64-0.4.6
 
 # set of Hyperledger Fabric images
@@ -20,5 +20,5 @@ for image in ${FABRIC_IMAGES[@]}; do
   docker pull ${DOCKER_NS}/$image:${ARCH}-${VERSION}
 done
 
-echo "Pulling ${DOCKER_NS}/fabric-baseos:${BASE_DOCKER_TAG}"
-docker pull ${DOCKER_NS}/fabric-baseos:${BASE_DOCKER_TAG}
+echo "Pulling ${DOCKER_NS}/fabric-baseos:${VERSION}"
+docker pull ${DOCKER_NS}/fabric-baseos:${VERSION}

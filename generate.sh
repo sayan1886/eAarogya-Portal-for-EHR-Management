@@ -1,9 +1,9 @@
-rm -R crypto-config/*
+rm -R crypto-config/
 
-./bin/cryptogen generate --config=crypto-config.yaml
+cryptogen generate --config=crypto-config.yaml
 
-rm config/*
+rm -R config/
 
-./bin/configtxgen -profile ehrOrgOrdererGenesis -outputBlock ./config/genesis.block
+configtxgen -profile ehrOrgOrdererGenesis -outputBlock ./config/genesis.block -channelID ehrchannel
 
-./bin/configtxgen -profile ehrOrgChannel -outputCreateChannelTx ./config/ehrchannel.tx -channelID ehrchannel
+configtxgen -profile ehrOrgChannel -outputCreateChannelTx ./config/ehrchannel.tx -channelID ehrchannel
